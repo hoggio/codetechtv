@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from '../styles/VideoList.module.css';
 
 const VideoList = ({ data }) => {
@@ -11,19 +12,23 @@ const VideoList = ({ data }) => {
           const { medium = {} } = thumbnails;
 
           return (
-            <a
-              key={id}
-              href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
-              className={styles.card}
-            >
-              <img
-                src={medium.url}
-                height={medium.height}
-                width={medium.width}
-                alt="image"
-              />
-              <h3>{title}</h3>
-            </a>
+            <div className={styles.card}>
+              <Link
+                key={id}
+                href={{
+                  pathname: '/player/[id]',
+                  query: { id: `${resourceId.videoId}` },
+                }}
+              >
+                <img
+                  src={medium.url}
+                  height={medium.height}
+                  width={medium.width}
+                  alt="image"
+                />
+                {/* <h3>{title}</h3> */}
+              </Link>
+            </div>
           );
         })}
       </div>

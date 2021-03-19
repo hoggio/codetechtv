@@ -1,8 +1,7 @@
-import Head from 'next/head';
-import VideoPlayer from '../../components/VideoPlayer';
-import VideoList from '../../components/VideoList';
-import styles from '../../styles/Home.module.css';
 import React from 'react';
+import Head from 'next/head';
+import VideoList from '../components/VideoList';
+import styles from '../styles/Home.module.css';
 import { Container } from '@material-ui/core';
 
 const channelId = 'UCSTOp5FPjNXBmop3o47yZaQ';
@@ -35,7 +34,6 @@ export default function Videos({ data }) {
       <main className={styles.main}>
         <Container>
           <VideoList data={data} />
-          <VideoPlayer />
         </Container>
       </main>
     </div>
