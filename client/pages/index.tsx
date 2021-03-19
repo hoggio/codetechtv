@@ -1,11 +1,11 @@
-import { Button } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
-    <div>
+    <Container>
       <Head>
         <title>CodeTech TV</title>
         <link rel="icon" href="/favicon.ico" />
@@ -24,6 +24,6 @@ export default function Home() {
           </Button>
         </Link>
       </main>
-    </div>
+    </Container>
   );
 }

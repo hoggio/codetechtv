@@ -17,9 +17,7 @@ const Layout = ({ children, title = 'CodeTech TV' }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Header />
-    <main>
-      <div className={styles.container}>{children}</div>
-    </main>
+    <main>{children}</main>
     <Footer />
   </div>
 );
