@@ -1,14 +1,15 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import Header from './Header';
-// import styles from '../styles/Layout.module.css';
+import Footer from './Footer';
+import styles from '../styles/Layout.module.css';
 
 type Props = {
   children?: ReactNode;
   title?: string;
 };
 
-const Layout = ({ children, title = 'Jeff Hogg' }: Props) => (
+const Layout = ({ children, title = 'CodeTech TV' }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -16,7 +17,10 @@ const Layout = ({ children, title = 'Jeff Hogg' }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Header />
-    {children}
+    <main>
+      <div className={styles.container}>{children}</div>
+    </main>
+    <Footer />
   </div>
 );
 
