@@ -55,6 +55,16 @@ export default function MenuAppBar() {
                   Videos
                 </Button>
               </Link>
+              <Link href="/about" passHref>
+                <Button className={classes.button} color="inherit">
+                  About
+                </Button>
+              </Link>
+              <Link href="/careers" passHref>
+                <Button className={classes.button} color="inherit">
+                  Careers
+                </Button>
+              </Link>
             </div>
           </Hidden>
           <Hidden only={['md', 'lg', 'xl']}>

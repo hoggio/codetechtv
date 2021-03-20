@@ -1,37 +1,46 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/VideoList.module.css';
+import { Box, Grid } from '@material-ui/core';
+// import { Card } from '@material-ui/core';
 
 const VideoList = ({ data }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.grid}>
-        {data.items.map(item => {
-          const { id, snippet = {} } = item;
-          const { title, thumbnails = {}, resourceId } = snippet;
-          const { medium = {} } = thumbnails;
+      {data.items.map(item => {
+        const { id, snippet = {} } = item;
+        const { thumbnails = {}, resourceId, description } = snippet;
+        const { medium = {} } = thumbnails;
+        const descList = description.split('\n');
+        const desc = descList[0];
 
-          return (
-            <div className={styles.card}>
-              <Link
-                key={id}
-                href={{
-                  pathname: '/player/[id]',
-                  query: { id: `${resourceId.videoId}` },
-                }}
-              >
-                <img
-                  src={medium.url}
-                  height={medium.height}
-                  width={medium.width}
-                  alt="image"
-                />
-                {/* <h3>{title}</h3> */}
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+        return (
+          <Grid container key={id} className={styles.item}>
+            <Grid item lg={4} md={6} sm={12} xs={12}>
+              <div className="image">
+                <Link
+                  href={{
+                    pathname: '/player/[id]',
+                    query: { id: `${resourceId.videoId}` },
+                  }}
+                >
+                  <img
+                    src={medium.url}
+                    height={medium.height}
+                    width={medium.width}
+                    alt="image"
+                  />
+                </Link>
+              </div>
+            </Grid>
+            <Grid item lg={6} md={6} sm={12} xs={12}>
+              <div className={styles.text}>
+                <p>{desc}</p>
+              </div>
+            </Grid>
+          </Grid>
+        );
+      })}
     </div>
   );
 };
