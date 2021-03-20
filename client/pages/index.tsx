@@ -12,7 +12,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to CodeTech TV</h1>
+        <Container>
+          <h1 className={styles.title}>Welcome to CodeTech TV</h1>
+        </Container>
 
         <p className={styles.description}>
           Learn how to code with free coding videos!

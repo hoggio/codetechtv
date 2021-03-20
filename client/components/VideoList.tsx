@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/VideoList.module.css';
-import { Box, Grid } from '@material-ui/core';
+import { Box, Grid, Paper } from '@material-ui/core';
 // import { Card } from '@material-ui/core';
 
 const VideoList = ({ data }) => {
   return (
-    <div className={styles.container}>
+    <Paper className={styles.container}>
       {data.items.map(item => {
         const { id, snippet = {} } = item;
         const { thumbnails = {}, resourceId, description } = snippet;
@@ -41,7 +41,7 @@ const VideoList = ({ data }) => {
           </Grid>
         );
       })}
-    </div>
+    </Paper>
   );
 };
 

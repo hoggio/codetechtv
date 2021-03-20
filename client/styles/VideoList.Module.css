@@ -1,5 +1,7 @@
 .container {
   align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .item {
   justify-content: center;
@@ -9,6 +11,13 @@
 
 .image {
   margin-right: 2rem;
+}
+
+.text {
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+  margin-left: 3rem;
 }
 
 .item img:hover {

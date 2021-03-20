@@ -1,0 +1,14 @@
+.root {
+  flex-grow: 1;
+}
+.logo {
+  flex-grow: 1;
+}
+
+.menuButton {
+  margin-right: 2rem;
+}
+
+.button {
+  margin-left: 2rem;
+}

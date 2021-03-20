@@ -4,8 +4,12 @@ import styles from '../styles/Footer.module.css';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      Copyright
-      <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+      <p className={styles.p}>Copyright</p>
+      <img
+        src="/images/longlogo.png"
+        alt="CodeTechTV Logo"
+        className={styles.logo}
+      />
     </footer>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
   AppBar,
   Toolbar,
@@ -11,23 +10,10 @@ import {
   Hidden,
 } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    button: {
-      marginLeft: '2rem',
-    },
-  })
-);
+import Logo from './Logo';
+import styles from '../styles/Header.module.css';
 
 export default function MenuAppBar() {
-  const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -40,45 +26,43 @@ export default function MenuAppBar() {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static" color="transparent">
+    <div className={styles.root}>
+      <AppBar position="static" color="primary">
         <Toolbar>
           <Hidden only={['xs', 'sm']}>
-            <div className={classes.root}>
-              <Link href="/" passHref>
-                <Button className={classes.button} color="inherit">
-                  Home
-                </Button>
-              </Link>
-              <Link href="/videos" passHref>
-                <Button className={classes.button} color="inherit">
-                  Videos
-                </Button>
-              </Link>
-              <Link href="/about" passHref>
-                <Button className={classes.button} color="inherit">
-                  About
-                </Button>
-              </Link>
-              <Link href="/careers" passHref>
-                <Button className={classes.button} color="inherit">
-                  Careers
-                </Button>
-              </Link>
+            <div className={styles.logo}>
+              <Logo />
             </div>
+
+            <Link href="/videos" passHref>
+              <Button className={styles.button} color="inherit">
+                Videos
+              </Button>
+            </Link>
+            <Link href="/about" passHref>
+              <Button className={styles.button} color="inherit">
+                About
+              </Button>
+            </Link>
+            <Link href="/contact" passHref>
+              <Button className={styles.button} color="inherit">
+                Contact
+              </Button>
+            </Link>
           </Hidden>
           <Hidden only={['md', 'lg', 'xl']}>
-            <div className={classes.root}>
-              <IconButton
-                aria-controls="menu"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-                aria-label="menu"
-              >
-                <MenuIcon />
-              </IconButton>
+            <div className={styles.logo}>
+              <Logo />
             </div>
+            <IconButton
+              aria-controls="menu"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
           </Hidden>
 
           <Menu
@@ -96,11 +80,14 @@ export default function MenuAppBar() {
             open={open}
             onClose={handleClose}
           >
-            <Link href="/" passHref>
-              <MenuItem onClick={handleClose}>Home</MenuItem>
-            </Link>
             <Link href="/videos" passHref>
               <MenuItem onClick={handleClose}>Videos</MenuItem>
+            </Link>
+            <Link href="/about" passHref>
+              <MenuItem onClick={handleClose}>About</MenuItem>
+            </Link>
+            <Link href="/contact" passHref>
+              <MenuItem onClick={handleClose}>Contact</MenuItem>
             </Link>
           </Menu>
         </Toolbar>

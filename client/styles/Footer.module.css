@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #2773e8;
 }
 
 .footer img {
@@ -18,5 +19,9 @@
 }
 
 .logo {
-  height: 1em;
+  height: 2.5em;
+}
+
+.p {
+  color: #fff;
 }
