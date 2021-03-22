@@ -1,0 +1,13 @@
+.videoRow {
+  padding: 1rem;
+}
+
+.image {
+  transition: all 0.2s ease-in-out;
+  margin: 0.5rem;
+}
+
+.image:hover {
+  transform: scale(1.08);
+  cursor: pointer;
+}

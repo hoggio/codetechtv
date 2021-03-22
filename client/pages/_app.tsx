@@ -1,8 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-import Layout from '../components/Layout';
-import Theme from '../components/Theme';
+import Layout from '../src/components/Layout';
+import Theme from '../src/components/Theme';
 
 function MyApp({ Component, pageProps }: any) {
   return (

@@ -1,13 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import VideoList from '../components/VideoList';
-import styles from '../styles/Home.module.css';
+import VideoList from '../../src/components/VideoList';
+import styles from '../../styles/Home.module.css';
 import { Container } from '@material-ui/core';
-
-const channelId = 'UCSTOp5FPjNXBmop3o47yZaQ';
-const uploadsId = 'UUSTOp5FPjNXBmop3o47yZaQ';
-
-const YOUTUBE_PLAYLIST_ITEMS_API = `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${uploadsId}&part=snippet&maxResults=50`;
+import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../src/constants/videoConstants';
 
 export async function getServerSideProps() {
   const res = await fetch(

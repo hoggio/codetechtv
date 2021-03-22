@@ -1,8 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '../styles/VideoList.module.css';
-import { Box, Grid, Paper } from '@material-ui/core';
-// import { Card } from '@material-ui/core';
+import styles from '../../styles/VideoList.module.css';
+import { Grid, Paper } from '@material-ui/core';
 
 const VideoList = ({ data }) => {
   return (
@@ -20,7 +19,7 @@ const VideoList = ({ data }) => {
               <div className="image">
                 <Link
                   href={{
-                    pathname: '/player/[id]',
+                    pathname: '/videos/[id]',
                     query: { id: `${resourceId.videoId}` },
                   }}
                 >

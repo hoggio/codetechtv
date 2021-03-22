@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import ReactPlayer from 'react-player/youtube';
-import styles from '../styles/VideoPlayer.module.css';
+import styles from '../../styles/VideoPlayer.module.css';
 
 const VideoPlayer = () => {
   const router = useRouter();

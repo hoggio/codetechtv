@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import Logo from './Logo';
-import styles from '../styles/Header.module.css';
+import styles from '../../styles/Header.module.css';
 
 export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -81,13 +81,19 @@ export default function MenuAppBar() {
             onClose={handleClose}
           >
             <Link href="/videos" passHref>
-              <MenuItem onClick={handleClose}>Videos</MenuItem>
+              <MenuItem component="a" onClick={handleClose}>
+                Videos
+              </MenuItem>
             </Link>
             <Link href="/about" passHref>
-              <MenuItem onClick={handleClose}>About</MenuItem>
+              <MenuItem component="a" onClick={handleClose}>
+                About
+              </MenuItem>
             </Link>
             <Link href="/contact" passHref>
-              <MenuItem onClick={handleClose}>Contact</MenuItem>
+              <MenuItem component="a" onClick={handleClose}>
+                Contact
+              </MenuItem>
             </Link>
           </Menu>
         </Toolbar>
