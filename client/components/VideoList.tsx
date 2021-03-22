@@ -11,7 +11,7 @@ const VideoList = ({ data }: any) => {
         const { thumbnails = {}, resourceId, description } = snippet;
         const { medium = {} } = thumbnails;
         const descList = description.split('\n');
-        const desc = descList[0];
+        const dsc = descList[0];
 
         return (
           <Grid container key={id} className={styles.item}>
@@ -34,7 +34,7 @@ const VideoList = ({ data }: any) => {
             </Grid>
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <div className={styles.text}>
-                <p>{desc}</p>
+                <p>{dsc}</p>
               </div>
             </Grid>
           </Grid>
