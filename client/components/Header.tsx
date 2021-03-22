@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from '../components/Link';
-import LinkButton from '../components/LinkButton';
+import Link from './Link';
+import LinkButton from './LinkButton';
 import {
   AppBar,
   Toolbar,
@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import Logo from './Logo';
-import styles from '../../styles/Header.module.css';
+import styles from '../styles/Header.module.css';
 
 export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

@@ -1,12 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import { Container } from '@material-ui/core';
-import VideoPlayer from '../../src/components/VideoPlayer';
-import VideoRow from '../../src/components/VideoRow';
+import VideoPlayer from '../../components/VideoPlayer';
+import VideoRow from '../../components/VideoRow';
 import styles from '../../styles/Video.module.css';
 import Link from 'next/link';
-import VideosButton from '../../src/components/VideosButton';
-import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../src/constants/videoConstants';
+import VideosButton from '../../components/VideosButton';
+import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../constants/videoConstants';
 
 export async function getServerSideProps() {
   const res = await fetch(

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '../../styles/VideoList.module.css';
+import styles from '../styles/VideoList.module.css';
 import { Grid, Paper } from '@material-ui/core';
 
 const VideoList = ({ data }: any) => {

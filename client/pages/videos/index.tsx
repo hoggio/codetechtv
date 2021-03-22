@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import VideoList from '../../src/components/VideoList';
+import VideoList from '../../components/VideoList';
 import styles from '../../styles/Home.module.css';
 import { Container } from '@material-ui/core';
-import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../src/constants/videoConstants';
+import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../constants/videoConstants';
 
 export async function getServerSideProps() {
   const res = await fetch(

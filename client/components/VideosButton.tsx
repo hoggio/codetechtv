@@ -1,4 +1,4 @@
-import Link from '../components/Link';
+import Link from './Link';
 import LinkButton from './LinkButton';
 import { Button } from '@material-ui/core';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';

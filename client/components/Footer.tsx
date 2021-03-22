@@ -4,7 +4,7 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import styles from '../../styles/Footer.module.css';
+import styles from '../styles/Footer.module.css';
 // import Link from '../components/Link';
 
 export default function Footer() {
