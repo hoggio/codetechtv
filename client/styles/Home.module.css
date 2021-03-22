@@ -10,7 +10,8 @@
 .paper {
   justify-content: center;
   align-items: center;
-  padding: 5rem 0;
+  padding: 3rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
 }

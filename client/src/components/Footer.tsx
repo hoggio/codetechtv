@@ -6,7 +6,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import styles from '../../styles/Footer.module.css';
-import Link from 'next/link';
+import Link from '../components/Link';
 
 const useStyles = makeStyles({
   root: {

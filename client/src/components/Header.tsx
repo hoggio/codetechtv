@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
+import Link from '../components/Link';
+import LinkButton from '../components/LinkButton';
 import {
   AppBar,
   Toolbar,
-  Button,
   IconButton,
   MenuItem,
   Menu,
@@ -33,22 +33,15 @@ export default function MenuAppBar() {
             <div className={styles.logo}>
               <Logo />
             </div>
-
-            <Link href="/videos" passHref>
-              <Button className={styles.button} color="inherit">
-                Videos
-              </Button>
-            </Link>
-            <Link href="/about" passHref>
-              <Button className={styles.button} color="inherit">
-                About
-              </Button>
-            </Link>
-            <Link href="/contact" passHref>
-              <Button className={styles.button} color="inherit">
-                Contact
-              </Button>
-            </Link>
+            <LinkButton href="/videos" color="inherit">
+              <div className={styles.button}>Videos</div>
+            </LinkButton>
+            <LinkButton href="/about" color="inherit">
+              <div className={styles.button}>About</div>
+            </LinkButton>
+            <LinkButton href="/contact" color="inherit">
+              <div className={styles.button}>Contact</div>
+            </LinkButton>
           </Hidden>
           <Hidden only={['md', 'lg', 'xl']}>
             <div className={styles.logo}>
@@ -80,20 +73,14 @@ export default function MenuAppBar() {
             open={open}
             onClose={handleClose}
           >
-            <Link href="/videos" passHref>
-              <MenuItem component="a" onClick={handleClose}>
-                Videos
-              </MenuItem>
+            <Link href="/videos">
+              <MenuItem onClick={handleClose}>Videos</MenuItem>
             </Link>
-            <Link href="/about" passHref>
-              <MenuItem component="a" onClick={handleClose}>
-                About
-              </MenuItem>
+            <Link href="/about">
+              <MenuItem onClick={handleClose}>About</MenuItem>
             </Link>
-            <Link href="/contact" passHref>
-              <MenuItem component="a" onClick={handleClose}>
-                Contact
-              </MenuItem>
+            <Link href="/contact">
+              <MenuItem onClick={handleClose}>Contact</MenuItem>
             </Link>
           </Menu>
         </Toolbar>

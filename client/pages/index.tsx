@@ -1,4 +1,4 @@
-import { Button, Container, Paper } from '@material-ui/core';
+import { Container, Paper } from '@material-ui/core';
 import Head from 'next/head';
 import VideosButton from '../src/components/VideosButton';
 import styles from '../styles/Home.module.css';
@@ -20,8 +20,8 @@ export default function Home() {
           <p className={styles.description}>
             Learn how to code with free coding videos!
           </p>
-          <VideosButton />
         </Paper>
+        <VideosButton />
       </main>
     </Container>
   );

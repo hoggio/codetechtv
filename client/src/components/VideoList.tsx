@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '../../styles/VideoList.module.css';
 import { Grid, Paper } from '@material-ui/core';
 
-const VideoList = ({ data }) => {
+const VideoList = ({ data }: any) => {
   return (
     <Paper className={styles.container}>
       {data.items.map(item => {

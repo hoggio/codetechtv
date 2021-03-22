@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import { Button, Container } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import VideoPlayer from '../../src/components/VideoPlayer';
 import VideoRow from '../../src/components/VideoRow';
-import styles from '../../styles/Player.module.css';
+import styles from '../../styles/Video.module.css';
 import Link from 'next/link';
 import VideosButton from '../../src/components/VideosButton';
 import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../src/constants/videoConstants';

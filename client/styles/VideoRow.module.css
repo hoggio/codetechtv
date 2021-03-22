@@ -1,3 +1,8 @@
+.container {
+  align-items: center;
+  margin-top: 2rem;
+}
+
 .videoRow {
   padding: 1rem;
 }
