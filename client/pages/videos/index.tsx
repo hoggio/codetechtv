@@ -20,7 +20,7 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Videos({ data }) {
+export default function Videos({ data }: any) {
   return (
     <div>
       <Head>

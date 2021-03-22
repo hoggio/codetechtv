@@ -23,7 +23,7 @@ export async function getServerSideProps() {
   };
 }
 
-const Video = ({ data }) => {
+const Video = ({ data }: any) => {
   return (
     <div>
       <Head>

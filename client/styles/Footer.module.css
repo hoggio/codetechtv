@@ -1,6 +1,7 @@
 .footer {
   display: flex;
   justify-content: center;
+  width: 500;
 }
 
 .text {
