@@ -39,9 +39,9 @@ export default function MenuAppBar() {
             <LinkButton href="/about" color="inherit">
               <div className={styles.button}>About</div>
             </LinkButton>
-            <LinkButton href="/contact" color="inherit">
+            {/* <LinkButton href="/contact" color="inherit">
               <div className={styles.button}>Contact</div>
-            </LinkButton>
+            </LinkButton> */}
           </Hidden>
           <Hidden only={['md', 'lg', 'xl']}>
             <div className={styles.logo}>
@@ -79,9 +79,9 @@ export default function MenuAppBar() {
             <Link href="/about">
               <MenuItem onClick={handleClose}>About</MenuItem>
             </Link>
-            <Link href="/contact">
+            {/* <Link href="/contact">
               <MenuItem onClick={handleClose}>Contact</MenuItem>
-            </Link>
+            </Link> */}
           </Menu>
         </Toolbar>
       </AppBar>
