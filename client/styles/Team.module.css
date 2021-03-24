@@ -1,0 +1,25 @@
+.section {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.avatarDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.button:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
