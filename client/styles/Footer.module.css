@@ -1,14 +1,24 @@
-.footer {
+.root {
   display: flex;
-  justify-content: center;
-  width: 500;
+  align-items: center;
 }
 
 .text {
-  text-align: center;
+  margin-right: 2rem;
+}
+.icons {
+  margin-right: 1rem;
 }
 
 .icon:hover {
   transition: all 0.2s ease-in-out;
-  transform: scale(1.1);
+  transform: scale(1.2);
+}
+
+.youtube {
+  color: #f70d05;
+}
+
+.twitter {
+  color: #2b91da;
 }
