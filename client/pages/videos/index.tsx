@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import VideoList from '../../components/VideoList';
 import styles from '../../styles/Home.module.css';

@@ -1,13 +1,29 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
 import Layout from '../components/Layout';
+import Loader from '../components/Loader';
 import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { CssBaseline } from '@material-ui/core';
 import Theme from '../components/Theme';
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
+  const router = useRouter();
+  const [pageLoading, setPageLoading] = React.useState<boolean>(false);
+  React.useEffect(() => {
+    const handleStart = () => {
+      setPageLoading(true);
+    };
+    const handleComplete = () => {
+      setPageLoading(false);
+    };
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+  }, [router]);
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -30,7 +46,7 @@ export default function MyApp(props: AppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Layout>
-          <Component {...pageProps} />
+          {pageLoading ? <Loader /> : <Component {...pageProps} />}
         </Layout>
       </ThemeProvider>
     </React.Fragment>
