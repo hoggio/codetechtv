@@ -11,7 +11,7 @@ import {
   Theme,
 } from '@material-ui/core';
 import { LinkedIn, GitHub, Twitter } from '@material-ui/icons';
-import styles from '../styles/Team.module.css';
+import styles from './Team.module.css';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

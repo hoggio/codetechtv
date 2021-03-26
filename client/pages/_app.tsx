@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import Loader from '../components/Loader';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-import Theme from '../components/Theme';
+import theme from '../util/theme';
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
@@ -36,14 +36,13 @@ export default function MyApp(props: AppProps) {
   return (
     <React.Fragment>
       <Head>
-        <title>My page</title>
+        <title>CodeTech TV</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <ThemeProvider theme={Theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <Layout>
           {pageLoading ? <Loader /> : <Component {...pageProps} />}
