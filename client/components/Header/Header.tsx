@@ -27,20 +27,24 @@ export default function MenuAppBar() {
 
   return (
     <div className={styles.root}>
-      <AppBar position="static" color="primary">
+      <AppBar position="static" color="secondary">
         <Toolbar>
           <Hidden only={['xs', 'sm']}>
             <div className={styles.logo}>
               <Logo />
             </div>
-            <LinkButton href="/videos" color="inherit">
-              <div className={styles.button}>Videos</div>
-            </LinkButton>
-            <LinkButton href="/about" color="inherit">
-              <div className={styles.button}>About</div>
-            </LinkButton>
+            <div className={styles.link}>
+              <LinkButton href="/videos" color="primary">
+                Videos
+              </LinkButton>
+            </div>
+            <div className={styles.link}>
+              <LinkButton href="/about" color="primary">
+                About
+              </LinkButton>
+            </div>
             {/* <LinkButton href="/contact" color="inherit">
-              <div className={styles.button}>Contact</div>
+              Contact
             </LinkButton> */}
           </Hidden>
           <Hidden only={['md', 'lg', 'xl']}>
