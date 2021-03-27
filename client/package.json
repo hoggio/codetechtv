@@ -12,7 +12,9 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "clsx": "latest",
+    "mongodb": "^3.6.5",
     "next": "10.0.9",
+    "next-auth": "^3.13.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-player": "^2.9.0"

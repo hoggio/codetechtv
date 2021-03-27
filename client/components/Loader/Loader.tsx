@@ -1,6 +1,6 @@
 import React from 'react';
 import { CircularProgress, Typography } from '@material-ui/core';
-import styles from '../styles/Loader.module.css';
+import styles from './Loader.module.css';
 
 const Loader = () => {
   return (

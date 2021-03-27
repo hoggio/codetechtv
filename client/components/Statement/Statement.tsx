@@ -1,5 +1,5 @@
 import { Paper, Typography } from '@material-ui/core';
-import styles from '../styles/Statement.module.css';
+import styles from './Statement.module.css';
 
 const Statement = () => {
   return (
