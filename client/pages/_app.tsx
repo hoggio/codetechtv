@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { Provider } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
 import Layout from '../components/Layout';
@@ -45,7 +46,13 @@ export default function MyApp(props: AppProps) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Layout>
-          {pageLoading ? <Loader /> : <Component {...pageProps} />}
+          {pageLoading ? (
+            <Loader />
+          ) : (
+            <Provider session={pageProps.session}>
+              <Component {...pageProps} />
+            </Provider>
+          )}
         </Layout>
       </ThemeProvider>
     </React.Fragment>

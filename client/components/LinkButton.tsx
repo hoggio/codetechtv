@@ -11,7 +11,7 @@ const NextLink = (
   ref: Ref<LinkRef>
 ) => (
   <Link href={href} as={as} prefetch={prefetch} locale={locale} passHref>
-    <Button buttonRef={ref} {...props} />
+    <Button variant="contained" color="inherit" buttonRef={ref} {...props} />
   </Link>
 );
 

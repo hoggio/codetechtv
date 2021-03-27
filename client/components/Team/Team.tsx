@@ -1,29 +1,16 @@
 import {
-  Avatar,
   Button,
   Card,
   CardActions,
   CardContent,
-  createStyles,
   Grid,
-  makeStyles,
   Typography,
-  Theme,
 } from '@material-ui/core';
 import { LinkedIn, GitHub, Twitter } from '@material-ui/icons';
+import Image from 'next/image';
 import styles from './Team.module.css';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    large: {
-      width: theme.spacing(14),
-      height: theme.spacing(14),
-    },
-  })
-);
-
 const Team = () => {
-  const classes = useStyles();
   return (
     <div className={styles.section}>
       <Typography gutterBottom variant="h5" component="h2">
@@ -34,10 +21,12 @@ const Team = () => {
           <Grid item xs={12} sm={12} md={4}>
             <Card className={styles.card}>
               <div className={styles.avatarDiv}>
-                <Avatar
+                <Image
                   alt="Jeff Hogg"
                   src="/images/me.jpg"
-                  className={classes.large}
+                  className={styles.avatar}
+                  width={80}
+                  height={80}
                 />
               </div>
               <CardContent>
