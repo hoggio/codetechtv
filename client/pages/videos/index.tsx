@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import VideoList from '../../components/VideoList';
-import styles from '../../styles/Home.module.css';
+import WatchButton from '../../components/WatchButton';
 import { Container } from '@material-ui/core';
 import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../constants/videoConstants';
 
@@ -27,9 +27,10 @@ export default function Videos({ data }: any) {
         <title>CodeTech TV</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main>
         <Container>
           <VideoList data={data} />
+          <WatchButton data={data} />
         </Container>
       </main>
     </div>

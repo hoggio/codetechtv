@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core';
 import VideoPlayer from '../../components/VideoPlayer';
 import VideoRow from '../../components/VideoRow';
 import styles from '../../styles/Video.module.css';
-import Link from 'next/link';
+import Link from '../../components/Link';
 import VideosButton from '../../components/VideosButton';
 import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../constants/videoConstants';
 

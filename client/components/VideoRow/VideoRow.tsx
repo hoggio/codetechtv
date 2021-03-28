@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Link from '../Link';
 import styles from './VideoRow.module.css';
 import { Paper } from '@material-ui/core';
 

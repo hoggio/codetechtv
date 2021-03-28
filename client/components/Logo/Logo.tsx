@@ -7,16 +7,14 @@ import styles from './Logo.module.css';
 
 const Logo = () => {
   return (
-    <Link href="/">
-      <Button size="small" color="primary">
-        <Image
-          className={styles.logo}
-          src="/images/bluelogo.png"
-          width={80}
-          height={80}
-        />
-      </Button>
-    </Link>
+    <LinkButton variant="outlined" color="secondary" href="/">
+      <Image
+        className={styles.logo}
+        src="/images/bluelogo.png"
+        width={50}
+        height={50}
+      />
+    </LinkButton>
   );
 };
 

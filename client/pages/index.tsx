@@ -2,7 +2,10 @@
 import { signIn, signOut, useSession } from 'next-auth/client';
 import { Container, Paper } from '@material-ui/core';
 import Head from 'next/head';
+import Hero from '../components/Hero';
 import VideosButton from '../components/VideosButton';
+import WatchButton from '../components/WatchButton';
+import { YOUTUBE_PLAYLIST_ITEMS_API } from '../constants/videoConstants';
 import styles from '../styles/Home.module.css';
 
 // Get from MongoDB
@@ -26,7 +29,22 @@ import styles from '../styles/Home.module.css';
 
 // { properties }
 
-export default function Home() {
+export async function getServerSideProps() {
+  const res = await fetch(
+    `${YOUTUBE_PLAYLIST_ITEMS_API}&key=${process.env.YOUTUBE_API_KEY}`
+  );
+  const data = await res.json();
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: { data },
+  };
+}
+
+export default function Home({ data }: any) {
   const [session, loading] = useSession();
   return (
     <Container>
@@ -35,30 +53,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <Paper className={styles.paper}>
-          <Container>
-            <h1 className={styles.title}>Welcome to CodeTech TV</h1>
-          </Container>
-
-          <p className={styles.description}>
-            Learn how to code with free coding videos!
-          </p>
-        </Paper>
-        {/* {!session && (
-          <>
-            Not Signed In <br />
-            <button onClick={signIn}> Sign In</button>
-          </>
-        )}
-        {session && (
-          <>
-            Signed in as {session.user.email} <br />
-            <div> You are logged in</div>
-            <button onClick={signOut}>Sign Out</button>
-          </>
-        )} */}
+      <main>
+        <Hero />
         <VideosButton />
+        <WatchButton data={data} />
       </main>
     </Container>
   );

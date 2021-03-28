@@ -19,11 +19,11 @@ export default NextAuth({
     //     keyId: process.env.APPLE_KEY_ID,
     //   },
     // }),
-    Providers.Auth0({
-      clientId: process.env.AUTH0_ID,
-      clientSecret: process.env.AUTH0_SECRET,
-      domain: process.env.AUTH0_DOMAIN,
-    }),
+    // Providers.Auth0({
+    //   clientId: process.env.AUTH0_ID,
+    //   clientSecret: process.env.AUTH0_SECRET,
+    //   domain: process.env.AUTH0_DOMAIN,
+    // }),
     // Providers.Facebook({
     //   clientId: process.env.FACEBOOK_ID,
     //   clientSecret: process.env.FACEBOOK_SECRET,
