@@ -1,8 +1,10 @@
-.container {
-  min-height: 80vh;
+.main {
+  min-height: 82vh;
   padding: 0 0.5rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }

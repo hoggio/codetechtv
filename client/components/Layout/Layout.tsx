@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import Header from '../Header';
 import Footer from '../Footer';
+import styles from './Layout.module.css';
 
 type Props = {
   children?: ReactNode;
@@ -29,7 +30,7 @@ const Layout = ({ children, title = 'CodeTech TV' }: Props) => (
       />
     </Head>
     <Header />
-    <main>{children}</main>
+    <main className={styles.main}>{children}</main>
     <Footer />
   </div>
 );
