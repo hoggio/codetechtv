@@ -3,7 +3,7 @@ import LinkButton from '../LinkButton';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import styles from './WatchButton.module.css';
 
-const WatchButton = React.forwardRef(({ data }: any) => {
+const WatchButton = React.forwardRef(({ data }: any, ref: any) => {
   const item = data.items[0];
   const { snippet = {} } = item;
   const { resourceId } = snippet;

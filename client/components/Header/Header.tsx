@@ -1,6 +1,7 @@
 import React from 'react';
 import { signIn, signOut, useSession } from 'next-auth/client';
-import Link from 'next/link';
+import Link from '../Link';
+import { useRouter } from 'next/router';
 import LinkButton from '../LinkButton';
 import {
   AppBar,
@@ -17,6 +18,7 @@ import styles from './Header.module.css';
 
 export default function MenuAppBar() {
   const [session, loading] = useSession();
+  const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -32,9 +34,25 @@ export default function MenuAppBar() {
     setAnchorEl(null);
     signIn();
   };
+
   const handleSignOut = () => {
     setAnchorEl(null);
-    signOut();
+    // router.push('/');
+    signOut({
+      callbackUrl:
+        process.env.NODE_ENV === 'production'
+          ? 'https://codetechtv.com/'
+          : 'http://localhost:3000/',
+    });
+  };
+
+  const handleVideos = () => {
+    setAnchorEl(null);
+    router.push('/videos');
+  };
+  const handleAbout = () => {
+    setAnchorEl(null);
+    router.push('/about');
   };
 
   return (
@@ -115,12 +133,8 @@ export default function MenuAppBar() {
             open={open}
             onClose={handleClose}
           >
-            <Link href="/videos">
-              <MenuItem onClick={handleClose}>Videos</MenuItem>
-            </Link>
-            <Link href="/about">
-              <MenuItem onClick={handleClose}>About</MenuItem>
-            </Link>
+            <MenuItem onClick={handleVideos}>Videos</MenuItem>
+            <MenuItem onClick={handleAbout}>About</MenuItem>
             {!session && <MenuItem onClick={handleSignIn}>Sign In</MenuItem>}
             {session && <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>}
             {/* <Link href="/contact">
