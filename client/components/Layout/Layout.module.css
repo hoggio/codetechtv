@@ -2,9 +2,8 @@
   min-height: 82vh;
   padding: 0 0.5rem;
   margin: 1rem;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  display: flex;
 }

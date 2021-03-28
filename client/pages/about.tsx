@@ -12,7 +12,7 @@ const About = () => {
         <title>CodeTech TV</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main>
         <Paper>
           <Statement />
           <Divider />

@@ -1,9 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import { Container } from '@material-ui/core';
 import VideoPlayer from '../../components/VideoPlayer';
 import VideoRow from '../../components/VideoRow';
-import styles from '../../styles/Video.module.css';
 import Link from '../../components/Link';
 import VideosButton from '../../components/VideosButton';
 import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../constants/videoConstants';
@@ -30,16 +28,12 @@ const Video = ({ data }: any) => {
         <title>CodeTech TV</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <Container>
-          <VideoPlayer />
-        </Container>
+      <main>
+        <VideoPlayer />
         <VideoRow data={data} />
-        <div className={styles.button}>
-          <Link href="/videos" passHref>
-            <VideosButton />
-          </Link>
-        </div>
+        <Link href="/videos" passHref>
+          <VideosButton />
+        </Link>
       </main>
     </div>
   );

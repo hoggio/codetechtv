@@ -1,15 +1,18 @@
 import React from 'react';
 import Link from '../Link';
 import styles from './VideoRow.module.css';
-import { Paper } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
 
 const VideoRow = ({ data }: any) => {
   return (
     <Paper className={styles.container}>
-      <div className={styles.videoRow}>
+      <Typography variant="body2" color="inherit" component="p">
+        Similar videos:
+      </Typography>
+      <div>
         {data.items
           // Optional Limit to 5
-          // .filter((item, i) => i < 5)
+          .filter((item, i) => i < 5)
           .map(item => {
             const { id, snippet = {} } = item;
             const { thumbnails = {}, title, resourceId } = snippet;

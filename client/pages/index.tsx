@@ -6,7 +6,6 @@ import Hero from '../components/Hero';
 import VideosButton from '../components/VideosButton';
 import WatchButton from '../components/WatchButton';
 import { YOUTUBE_PLAYLIST_ITEMS_API } from '../constants/videoConstants';
-import styles from '../styles/Home.module.css';
 
 // Get from MongoDB
 
@@ -55,9 +54,9 @@ export default function Home({ data }: any) {
 
       <main>
         <Hero />
-        <VideosButton />
-        <WatchButton data={data} />
       </main>
+      <VideosButton />
+      <WatchButton data={data} />
     </Container>
   );
 }
