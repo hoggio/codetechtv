@@ -1,6 +1,5 @@
 import React from 'react';
 import { signIn, signOut, useSession } from 'next-auth/client';
-import Link from '../Link';
 import { useRouter } from 'next/router';
 import LinkButton from '../LinkButton';
 import {
@@ -50,6 +49,7 @@ export default function MenuAppBar() {
     setAnchorEl(null);
     router.push('/videos');
   };
+
   const handleAbout = () => {
     setAnchorEl(null);
     router.push('/about');
