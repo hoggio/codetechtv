@@ -3,6 +3,7 @@ import {
   Card,
   CardActions,
   CardContent,
+  Divider,
   Grid,
   Typography,
 } from '@material-ui/core';
@@ -14,7 +15,7 @@ const Team = () => {
   return (
     <div className={styles.section}>
       <Typography gutterBottom variant="h5" component="h2">
-        Meet the team
+        Meet Our Team
       </Typography>
       <div>
         <Grid container direction="row" justify="center" alignItems="center">
@@ -39,6 +40,7 @@ const Team = () => {
                   graduate.
                 </Typography>
               </CardContent>
+              <Divider />
               <CardActions className={styles.social}>
                 <Button className={styles.button} size="small" color="primary">
                   <a
@@ -70,12 +72,6 @@ const Team = () => {
               </CardActions>
             </Card>
           </Grid>
-          {/* <Grid item xs={12} sm={12} md={4}>
-            Card
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
-            Card
-          </Grid> */}
         </Grid>
       </div>
     </div>

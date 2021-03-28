@@ -1,4 +1,4 @@
-import { Paper, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import styles from './Statement.module.css';
 
 const Statement = () => {

@@ -3,11 +3,11 @@ import styles from './Hero.module.css';
 
 const Hero = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Paper className={styles.paper}>
-        <Container>
+        <div>
           <h1 className={styles.title}>Welcome to CodeTech TV</h1>
-        </Container>
+        </div>
 
         <p className={styles.description}>
           Learn how to code with free coding videos!

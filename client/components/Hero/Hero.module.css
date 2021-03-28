@@ -1,9 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .paper {
   justify-content: center;
   align-items: center;
   padding: 3rem;
   margin-bottom: 2rem;
-  display: flex;
   flex-direction: column;
 }
 
