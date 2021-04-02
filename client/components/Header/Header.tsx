@@ -36,7 +36,6 @@ export default function MenuAppBar() {
 
   const handleSignOut = () => {
     setAnchorEl(null);
-    // router.push('/');
     signOut({
       callbackUrl:
         process.env.NODE_ENV === 'production'
@@ -53,6 +52,10 @@ export default function MenuAppBar() {
   const handleAbout = () => {
     setAnchorEl(null);
     router.push('/about');
+  };
+  const handleProfile = () => {
+    setAnchorEl(null);
+    router.push('/profile');
   };
 
   return (
@@ -88,6 +91,11 @@ export default function MenuAppBar() {
             )}
             {session && (
               <>
+                <div className={styles.link}>
+                  <LinkButton href="/profile" color="primary">
+                    Profile
+                  </LinkButton>
+                </div>
                 <div className={styles.link}>
                   <Button
                     variant="contained"
@@ -136,7 +144,14 @@ export default function MenuAppBar() {
             <MenuItem onClick={handleCategories}>Categories</MenuItem>
             <MenuItem onClick={handleAbout}>About</MenuItem>
             {!session && <MenuItem onClick={handleSignIn}>Sign In</MenuItem>}
-            {session && <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>}
+            {session && [
+              <MenuItem key="profile" onClick={handleProfile}>
+                Profile
+              </MenuItem>,
+              <MenuItem key="signout" onClick={handleSignOut}>
+                Sign Out
+              </MenuItem>,
+            ]}
             {/* <Link href="/contact">
               <MenuItem onClick={handleClose}>Contact</MenuItem>
             </Link> */}

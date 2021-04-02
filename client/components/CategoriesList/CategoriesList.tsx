@@ -10,7 +10,6 @@ const CategoriesList = ({ data }: any) => {
         const { id, snippet = {} } = item;
         const { thumbnails = {}, title } = snippet;
         const { medium = {} } = thumbnails;
-        console.log(item);
 
         return (
           <div className={styles.container} key={id}>
