@@ -45,9 +45,9 @@ export default function MenuAppBar() {
     });
   };
 
-  const handleVideos = () => {
+  const handleCategories = () => {
     setAnchorEl(null);
-    router.push('/videos');
+    router.push('/categories');
   };
 
   const handleAbout = () => {
@@ -64,8 +64,8 @@ export default function MenuAppBar() {
               <Logo />
             </div>
             <div className={styles.link}>
-              <LinkButton href="/videos" color="primary">
-                Videos
+              <LinkButton href="/categories" color="primary">
+                Categories
               </LinkButton>
             </div>
             <div className={styles.link}>
@@ -133,7 +133,7 @@ export default function MenuAppBar() {
             open={open}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleVideos}>Videos</MenuItem>
+            <MenuItem onClick={handleCategories}>Categories</MenuItem>
             <MenuItem onClick={handleAbout}>About</MenuItem>
             {!session && <MenuItem onClick={handleSignIn}>Sign In</MenuItem>}
             {session && <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>}

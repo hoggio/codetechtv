@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '../Link';
+
 import styles from './VideoList.module.css';
 import { Grid, Paper } from '@material-ui/core';
 
@@ -16,7 +17,7 @@ const VideoList = ({ data }: any) => {
         return (
           <Grid container key={id} className={styles.item}>
             <Grid item lg={4} md={6} sm={12} xs={12}>
-              <div className="image">
+              <div>
                 <Link
                   href={{
                     pathname: '/videos/[id]',
