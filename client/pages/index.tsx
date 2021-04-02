@@ -3,9 +3,9 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 import { Container, Paper } from '@material-ui/core';
 import Head from 'next/head';
 import Hero from '../components/Hero';
-import VideosButton from '../components/VideosButton';
+import CategoriesButton from '../components/CategoriesButton';
 import WatchButton from '../components/WatchButton';
-import { YOUTUBE_PLAYLIST_ITEMS_API } from '../constants/videoConstants';
+import { YOUTUBE_ALL_VIDEOS_API } from '../constants/videoConstants';
 
 // Get from MongoDB
 
@@ -30,7 +30,7 @@ import { YOUTUBE_PLAYLIST_ITEMS_API } from '../constants/videoConstants';
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `${YOUTUBE_PLAYLIST_ITEMS_API}&key=${process.env.YOUTUBE_API_KEY}`
+    `${YOUTUBE_ALL_VIDEOS_API}&key=${process.env.YOUTUBE_API_KEY}`
   );
   const data = await res.json();
   if (!data) {
@@ -55,7 +55,7 @@ export default function Home({ data }: any) {
       <main>
         <Hero />
       </main>
-      <VideosButton />
+      <CategoriesButton />
       <WatchButton data={data} />
     </Container>
   );

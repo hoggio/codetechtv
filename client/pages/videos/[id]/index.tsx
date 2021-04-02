@@ -1,14 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
-import VideoPlayer from '../../components/VideoPlayer';
-import VideoRow from '../../components/VideoRow';
-import Link from '../../components/Link';
-import VideosButton from '../../components/VideosButton';
-import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../constants/videoConstants';
+import VideoPlayer from '../../../components/VideoPlayer';
+import VideoRow from '../../../components/VideoRow';
+import Link from '../../../components/Link';
+import CategoriesButton from '../../../components/CategoriesButton';
+import { YOUTUBE_ALL_VIDEOS_API } from '../../../constants/videoConstants';
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `${YOUTUBE_PLAYLIST_ITEMS_API}&key=${process.env.YOUTUBE_API_KEY}`
+    `${YOUTUBE_ALL_VIDEOS_API}&key=${process.env.YOUTUBE_API_KEY}`
   );
   const data = await res.json();
   if (!data) {
@@ -22,6 +22,8 @@ export async function getServerSideProps() {
 }
 
 const Video = ({ data }: any) => {
+  console.log(data);
+
   return (
     <div>
       <Head>
@@ -32,7 +34,7 @@ const Video = ({ data }: any) => {
         <VideoPlayer />
         <VideoRow data={data} />
         <Link href="/videos" passHref>
-          <VideosButton />
+          <CategoriesButton />
         </Link>
       </main>
     </div>

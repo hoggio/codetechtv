@@ -3,8 +3,8 @@ import React from 'react';
 
 const VideosButton = React.forwardRef(() => {
   return (
-    <LinkButton href="/videos" variant="contained" color="primary">
-      Videos
+    <LinkButton href="/categories" variant="contained" color="primary">
+      Categories
     </LinkButton>
   );
 });
