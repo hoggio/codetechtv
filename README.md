@@ -46,8 +46,6 @@ A Next.js and MongoDB built react web application. Featuring the YouTube API and
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - [Next.js](https://nextjs.org/)
 - [Material-UI](https://material-ui.com/)
 
