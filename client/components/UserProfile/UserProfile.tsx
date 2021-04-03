@@ -11,20 +11,11 @@ const UserProfile = () => {
       {session && (
         <>
           <Card className={styles.card}>
-            <div className={styles.avatarDiv}>
-              {/* <Image
-                alt="Jeff Hogg"
-                src={session.user.image}
-                // className={styles.avatar}
-                width={80}
-                height={80}
-              /> */}
-              <img
-                className={styles.avatar}
-                src={session.user.image}
-                alt="user image"
-              />
-            </div>
+            <img
+              className={styles.avatar}
+              src={session.user.image}
+              alt="user image"
+            />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
                 {session.user.name}

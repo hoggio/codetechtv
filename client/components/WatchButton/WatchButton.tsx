@@ -4,8 +4,8 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import styles from './WatchButton.module.css';
 
 const WatchButton = React.forwardRef(({ data }: any, ref: any) => {
-  const random = Math.floor(Math.random() * data.items.length);
-  const item = data.items[random];
+  const last = data.items.length - 1;
+  const item = data.items[last];
   const { snippet = {} } = item;
   const { resourceId } = snippet;
   return (

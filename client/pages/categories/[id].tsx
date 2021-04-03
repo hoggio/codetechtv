@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import VideoList from '../../../components/VideoList';
-import Link from '../../../components/Link';
-import CategoriesButton from '../../../components/CategoriesButton';
-import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../../constants/videoConstants';
+import VideoList from '../../components/VideoList';
+import Link from '../../components/Link';
+import CategoriesButton from '../../components/CategoriesButton';
+import { YOUTUBE_PLAYLIST_ITEMS_API } from '../../constants/videoConstants';
 
 export async function getServerSideProps({ query }) {
   const { id } = query;

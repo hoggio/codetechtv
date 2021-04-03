@@ -1,10 +1,34 @@
 import { connectToDatabase } from '../../util/mongodb';
 
-export default async function handler(req, res) {
+export default async function userHandler(req, res) {
   const { db } = await connectToDatabase();
-  const data = await db.collection('users').find({}).limit(20).toArray();
+  const {
+    query: { id, name },
+    method,
+  } = req;
 
-  console.log(data);
+  switch (method) {
+    case 'GET':
+      try {
+        const data = await db.collection('users').find({}).limit(20).toArray();
+        console.log(data);
+        res.json(data);
+      } catch (error) {
+        res.status(200).json({ success: false });
+      }
+      break;
 
-  res.json(data);
+    case 'DELETE':
+      try {
+        //   const data = await db.collection('users').find({}).limit(20).toArray();
+        //   console.log(data);
+        //   res.json(data);
+      } catch (error) {
+        res.status(200).json({ success: false });
+      }
+      break;
+
+    default:
+      break;
+  }
 }
