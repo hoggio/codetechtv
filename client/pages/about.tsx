@@ -13,11 +13,9 @@ const About = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Paper>
-          <Statement />
-          <Divider />
-          <Team />
-        </Paper>
+        <Statement />
+        <Divider />
+        <Team />
       </main>
     </Container>
   );
