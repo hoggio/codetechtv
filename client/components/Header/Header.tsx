@@ -36,7 +36,6 @@ export default function MenuAppBar() {
 
   const handleSignOut = () => {
     setAnchorEl(null);
-    // router.push('/');
     signOut({
       callbackUrl:
         process.env.NODE_ENV === 'production'
@@ -54,6 +53,10 @@ export default function MenuAppBar() {
     setAnchorEl(null);
     router.push('/about');
   };
+  const handleProfile = () => {
+    setAnchorEl(null);
+    router.push('/profile');
+  };
 
   return (
     <div className={styles.root}>
@@ -64,23 +67,19 @@ export default function MenuAppBar() {
               <Logo />
             </div>
             <div className={styles.link}>
-              <LinkButton href="/categories" color="primary">
+              <LinkButton href="/categories" color="inherit" variant="text">
                 Categories
               </LinkButton>
             </div>
             <div className={styles.link}>
-              <LinkButton href="/about" color="primary">
+              <LinkButton href="/about" color="inherit" variant="text">
                 About
               </LinkButton>
             </div>
             {!session && (
               <>
                 <div className={styles.link}>
-                  <Button
-                    variant="contained"
-                    onClick={handleSignIn}
-                    color="primary"
-                  >
+                  <Button variant="text" onClick={handleSignIn} color="inherit">
                     Sign In
                   </Button>
                 </div>
@@ -89,10 +88,15 @@ export default function MenuAppBar() {
             {session && (
               <>
                 <div className={styles.link}>
+                  <LinkButton href="/profile" color="inherit" variant="text">
+                    Profile
+                  </LinkButton>
+                </div>
+                <div className={styles.link}>
                   <Button
-                    variant="contained"
+                    variant="text"
                     onClick={handleSignOut}
-                    color="primary"
+                    color="inherit"
                   >
                     Sign Out
                   </Button>
@@ -108,7 +112,7 @@ export default function MenuAppBar() {
               <Logo />
             </div>
             <IconButton
-              color="primary"
+              color="inherit"
               aria-controls="menu"
               aria-haspopup="true"
               onClick={handleMenu}
@@ -136,7 +140,14 @@ export default function MenuAppBar() {
             <MenuItem onClick={handleCategories}>Categories</MenuItem>
             <MenuItem onClick={handleAbout}>About</MenuItem>
             {!session && <MenuItem onClick={handleSignIn}>Sign In</MenuItem>}
-            {session && <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>}
+            {session && [
+              <MenuItem key="profile" onClick={handleProfile}>
+                Profile
+              </MenuItem>,
+              <MenuItem key="signout" onClick={handleSignOut}>
+                Sign Out
+              </MenuItem>,
+            ]}
             {/* <Link href="/contact">
               <MenuItem onClick={handleClose}>Contact</MenuItem>
             </Link> */}

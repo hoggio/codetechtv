@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -11,7 +10,7 @@ import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <AppBar position="static" color="transparent" className={styles.root}>
+    <AppBar position="static" color="secondary" className={styles.root}>
       <Toolbar>
         <div className={styles.text}>
           <Typography variant="body1">CodeTech TV</Typography>
