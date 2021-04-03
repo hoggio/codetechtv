@@ -1,8 +1,7 @@
 <!-- PROJECT LOGO -->
-<br />
 <p align="center">
   <a href="https://codetechtv.com/">
-    <img src="client/public/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="client/public/images/bluelogo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">CodeTech TV</h3>
