@@ -14,7 +14,7 @@ const UserProfile = () => {
             <img
               className={styles.avatar}
               src={session.user.image}
-              alt="user image"
+              alt="users image"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
