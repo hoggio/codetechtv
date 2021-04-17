@@ -79,7 +79,12 @@ export default function MenuAppBar() {
             {!session && (
               <>
                 <div className={styles.link}>
-                  <Button variant="text" onClick={handleSignIn} color="inherit">
+                  <Button
+                    href={`/api/auth/signin`}
+                    variant="text"
+                    onClick={handleSignIn}
+                    color="inherit"
+                  >
                     Sign In
                   </Button>
                 </div>
