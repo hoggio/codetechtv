@@ -41,7 +41,7 @@
 
 ## About The Project
 
-A Next.js and MongoDB built react web application. Featuring the YouTube API and a video player, codetech tv provides the user with free coding tutorials. Using next-auth, the user can sign in with Google oauth.
+A Next.js and MongoDB built react web application. Featuring the YouTube API and a video player, codetech tv provides the user with free coding tutorials. Users can sign in with Google oauth and next-auth.
 
 ### Built With
 
