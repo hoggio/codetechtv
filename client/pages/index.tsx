@@ -7,27 +7,6 @@ import CategoriesButton from '../components/CategoriesButton';
 import WatchButton from '../components/WatchButton';
 import { YOUTUBE_ALL_VIDEOS_API } from '../constants/videoConstants';
 
-// Get from MongoDB
-
-// export async function getServerSideProps(context) {
-//   const { db } = await connectToDatabase();
-
-//   const data = await db
-//     .collection('listingsAndReviews')
-//     .find({})
-//     .limit(20)
-//     .toArray();
-
-//   const properties = JSON.parse(JSON.stringify(data));
-//   console.log(properties);
-
-//   return {
-//     props: { properties: properties },
-//   };
-// }
-
-// { properties }
-
 export async function getServerSideProps() {
   const res = await fetch(
     `${YOUTUBE_ALL_VIDEOS_API}&key=${process.env.YOUTUBE_API_KEY}`

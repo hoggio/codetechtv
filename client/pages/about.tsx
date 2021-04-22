@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Team from '../components/Team';
 import Statement from '../components/Statement';
-import { Container, Divider, Paper } from '@material-ui/core';
+import { Container, Divider } from '@material-ui/core';
 
 const About = () => {
   return (
