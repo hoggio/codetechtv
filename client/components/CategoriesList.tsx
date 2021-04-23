@@ -2,8 +2,6 @@ import React from 'react';
 import Link from './Link';
 
 const CategoriesList = ({ data }: any) => {
-  console.log(data);
-
   return (
     <div className="flex space-x-6">
       {data.items.map(item => {

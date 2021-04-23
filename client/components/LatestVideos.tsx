@@ -28,9 +28,9 @@ const VideoRow = ({ data }: any) => {
                     }}
                   >
                     <img
-                      src={thumbnails.default.url}
-                      height={thumbnails.default.height}
-                      width={thumbnails.default.width}
+                      src={thumbnails.maxres.url}
+                      height={thumbnails.maxres.height}
+                      width={thumbnails.maxres.width}
                       alt={title}
                     />
                   </Link>
