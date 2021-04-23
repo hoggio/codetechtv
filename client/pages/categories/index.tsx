@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import CategoriesList from '../../components/CategoriesList';
-import WatchButton from '../../components/WatchButton';
 import { Container } from '@material-ui/core';
 import { YOUTUBE_PLAYLISTS_API } from '../../constants/videoConstants';
 
@@ -30,7 +29,6 @@ export default function Categories({ data }: any) {
       <main>
         <Container>
           <CategoriesList data={data} />
-          {/* <WatchButton data={data} /> */}
         </Container>
       </main>
     </div>
