@@ -5,9 +5,7 @@ import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
 import Layout from '../components/Layout';
 import Loader from '../components/Loader';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline } from '@material-ui/core';
-import theme from '../util/theme';
+import '../styles/globals.css';
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
@@ -26,16 +24,8 @@ export default function MyApp(props: AppProps) {
     router.events.on('routeChangeError', handleComplete);
   }, [router]);
 
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement!.removeChild(jssStyles);
-    }
-  }, []);
-
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>CodeTech TV</title>
         <meta
@@ -43,18 +33,16 @@ export default function MyApp(props: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Layout>
-          {pageLoading ? (
-            <Loader />
-          ) : (
-            <Provider session={pageProps.session}>
-              <Component {...pageProps} />
-            </Provider>
-          )}
-        </Layout>
-      </ThemeProvider>
-    </React.Fragment>
+
+      <Layout>
+        {pageLoading ? (
+          <Loader />
+        ) : (
+          <Provider session={pageProps.session}>
+            <Component {...pageProps} />
+          </Provider>
+        )}
+      </Layout>
+    </>
   );
 }

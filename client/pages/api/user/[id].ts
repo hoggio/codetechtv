@@ -14,12 +14,9 @@ export default async function userHandler(req, res) {
     case 'GET':
       // Get data from your database
 
-      const user = await db
-        .collection('users')
-        .find({ _id: objectId })
-        .toArray();
+      const user = await db.collection('users').findOne({ _id: objectId });
 
-      res.status(200).json(user[0]);
+      res.status(200).json(user);
       break;
     case 'PUT':
       // Update or create data in your database
@@ -28,7 +25,7 @@ export default async function userHandler(req, res) {
         .updateOne({ _id: objectId }, { $set: req.body }, { upsert: false });
       console.log('updated');
 
-      res.status(200).json(updatedUser);
+      res.status(201).json(updatedUser);
       break;
     case 'DELETE':
       // Delete data in your database

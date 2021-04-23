@@ -1,12 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
-import CategoriesList from '../../components/CategoriesList';
-import { Container } from '@material-ui/core';
-import { YOUTUBE_PLAYLISTS_API } from '../../constants/videoConstants';
+import VideoPlayer from '../../components/VideoPlayer';
+import LatestVideos from '../../components/LatestVideos';
+import Link from '../../components/Link';
+import { YOUTUBE_ALL_VIDEOS_API } from '../../constants/videoConstants';
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `${YOUTUBE_PLAYLISTS_API}&key=${process.env.YOUTUBE_API_KEY}`
+    `${YOUTUBE_ALL_VIDEOS_API}&key=${process.env.YOUTUBE_API_KEY}`
   );
   const data = await res.json();
   if (!data) {
@@ -19,7 +20,7 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Categories({ data }: any) {
+const Video = ({ data }: any) => {
   return (
     <div>
       <Head>
@@ -27,10 +28,11 @@ export default function Categories({ data }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Container>
-          <CategoriesList data={data} />
-        </Container>
+        <VideoPlayer />
+        <LatestVideos data={data} />
       </main>
     </div>
   );
-}
+};
+
+export default Video;
