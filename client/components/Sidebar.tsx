@@ -50,7 +50,7 @@ const navigation = [
 ];
 const userNavigation = [
   { name: 'Your Profile', href: '/profile' },
-  { name: 'Sign out', href: '/signout' },
+  { name: 'Sign out', href: '/api/auth/signout' },
 ];
 
 function classNames(...classes) {
@@ -90,7 +90,7 @@ export default function Sidebar({ children }) {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-blue-600">
+            <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-blue-700">
               <Transition.Child
                 as={Fragment}
                 enter="ease-in-out duration-300"
@@ -149,7 +149,7 @@ export default function Sidebar({ children }) {
       </Transition.Root>
 
       {/* Static sidebar for desktop */}
-      <div className="hidden bg-blue-600 md:flex md:flex-shrink-0">
+      <div className="hidden bg-blue-700 md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
