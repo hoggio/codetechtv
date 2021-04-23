@@ -22,7 +22,7 @@ const Layout = ({ children, title = 'CodeTech TV' }: Props) => (
       <meta property="og:url" content="https://codetechtv.com/" />
       <meta
         property="og:image"
-        content="https://codetechtv.com/images/codetech.png"
+        content="https://codetechtv.com/images/codetechtv.png"
       />
     </Head>
     <Sidebar children={children} />
