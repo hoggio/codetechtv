@@ -20,7 +20,7 @@ const VideoRow = ({ data }: any) => {
               <Link
                 key={id}
                 href={{
-                  pathname: '/videos/[id]',
+                  pathname: '/player/[id]',
                   query: { id: `${resourceId.videoId}` },
                 }}
               >

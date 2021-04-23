@@ -33,9 +33,6 @@ const Video = ({ data }: any) => {
       <main>
         <VideoPlayer />
         <VideoRow data={data} />
-        <Link href="/videos" passHref>
-          <CategoriesButton />
-        </Link>
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
-import Header from './Header';
-import Footer from './Footer';
+import Sidebar from './Sidebar';
+// import Footer from './Footer';
 
 type Props = {
   children?: ReactNode;
@@ -19,7 +19,7 @@ const Layout = ({ children, title = 'CodeTech TV' }: Props) => (
       <meta property="og:title" content={title} />
       <meta
         property="og:description"
-        content="Learn how to code with free coding videos"
+        content="Learn how to code at CodeTech TV with coding videos and tutorials."
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://codetechtv.com/" />
@@ -28,9 +28,10 @@ const Layout = ({ children, title = 'CodeTech TV' }: Props) => (
         content="https://codetechtv.com/images/codetech.png"
       />
     </Head>
-    <Header />
-    <main>{children}</main>
-    <Footer />
+
+    {/* <Navbar /> */}
+    <Sidebar children={children} />
+    {/* <Footer /> */}
   </div>
 );
 

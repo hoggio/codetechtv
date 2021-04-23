@@ -11,7 +11,7 @@ const WatchButton = React.forwardRef(({ data }: any, ref: any) => {
     <div>
       <LinkButton
         href={{
-          pathname: '/videos/[id]',
+          pathname: '/player/[id]',
           query: { id: `${resourceId.videoId}` },
         }}
         variant="contained"
