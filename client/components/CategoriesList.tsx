@@ -1,41 +1,37 @@
 import React from 'react';
 import Link from './Link';
-import { Paper, Typography } from '@material-ui/core';
 
 const CategoriesList = ({ data }: any) => {
+  console.log(data);
+
   return (
-    <Paper>
+    <div className="flex space-x-6">
       {data.items.map(item => {
         const { id, snippet = {} } = item;
         const { thumbnails = {}, title } = snippet;
-        const { medium = {} } = thumbnails;
+        const { maxres = {} } = thumbnails;
 
         return (
           <div key={id}>
-            <div>
-              <Typography gutterBottom variant="h5" component="h2">
-                {title}
-              </Typography>
-              <div>
-                <Link
-                  href={{
-                    pathname: '/categories/[id]',
-                    query: { id: `${id}` },
-                  }}
-                >
-                  <img
-                    src={medium.url}
-                    height={medium.height}
-                    width={medium.width}
-                    alt="image"
-                  />
-                </Link>
-              </div>
-            </div>
+            <h1 className="text-md md:text-2xl lg:text-4xl mb-6">{title}</h1>
+            <Link
+              href={{
+                pathname: '/categories/[id]',
+                query: { id: `${id}` },
+              }}
+            >
+              <img
+                className="cursor-pointer transition duration-150 transform hover:scale-110"
+                src={maxres.url}
+                height={maxres.height}
+                width={maxres.width}
+                alt="image"
+              />
+            </Link>
           </div>
         );
       })}
-    </Paper>
+    </div>
   );
 };
 

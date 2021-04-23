@@ -41,7 +41,7 @@ const navigation = [
   },
   {
     name: 'Categories',
-    href: 'categories',
+    href: '/categories',
     icon: DocumentSearchIcon,
     current: false,
   },
