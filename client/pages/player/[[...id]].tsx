@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import VideoPlayer from '../../components/VideoPlayer';
-import VideoRow from '../../components/VideoRow';
+import LatestVideos from '../../components/LatestVideos';
 import Link from '../../components/Link';
 import CategoriesButton from '../../components/CategoriesButton';
 import { YOUTUBE_ALL_VIDEOS_API } from '../../constants/videoConstants';
@@ -32,7 +32,7 @@ const Video = ({ data }: any) => {
       </Head>
       <main>
         <VideoPlayer />
-        <VideoRow data={data} />
+        <LatestVideos data={data} />
       </main>
     </div>
   );
