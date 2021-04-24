@@ -1,22 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 import Team from '../components/Team';
-import Statement from '../components/Statement';
-import { Container, Divider } from '@material-ui/core';
 
 const About = () => {
   return (
-    <Container>
+    <div>
       <Head>
-        <title>CodeTech TV</title>
+        <title>About</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Statement />
-        <Divider />
         <Team />
       </main>
-    </Container>
+    </div>
   );
 };
 
