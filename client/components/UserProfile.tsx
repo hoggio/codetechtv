@@ -14,7 +14,7 @@ export default function UserProfile() {
                 <img
                   className="w-16 h-16 rounded-full lg:w-20 lg:h-20"
                   src={session.user.image}
-                  alt=""
+                  alt="avatar"
                 />
                 <div className="font-medium text-lg leading-6 space-y-1">
                   <h3>{session.user.name}</h3>
@@ -28,32 +28,3 @@ export default function UserProfile() {
     </div>
   );
 }
-
-// import { Card, CardContent, Typography } from '@material-ui/core';
-
-// const UserProfile = () => {
-// const [session, loading] = useSession();
-
-//   return (
-//     <div>
-//       {!session && <>Sign In</>}
-//       {session && (
-//         <>
-//           <Card>
-//             <img src={session.user.image} alt="users image" />
-//             <CardContent>
-//               <Typography gutterBottom variant="h5" component="h2">
-//                 {session.user.name}
-//               </Typography>
-//               <Typography variant="body2" color="textSecondary" component="p">
-//                 {session.user.email}
-//               </Typography>
-//             </CardContent>
-//           </Card>
-//         </>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default UserProfile;

@@ -1,28 +1,10 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ]
-  }
-  ```
-*/
-
 import { Fragment, useState } from 'react';
+import { useSession } from 'next-auth/client';
 import { Dialog, Menu, Transition } from '@headlessui/react';
 import {
   BellIcon,
-  FolderIcon,
   HomeIcon,
   MenuAlt2Icon,
-  UsersIcon,
   XIcon,
   DocumentSearchIcon,
   FilmIcon,
@@ -59,6 +41,7 @@ function classNames(...classes) {
 
 export default function Sidebar({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [session, loading] = useSession();
 
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
@@ -216,11 +199,6 @@ export default function Sidebar({ children }) {
               </form>
             </div>
             <div className="ml-4 flex items-center md:ml-6">
-              <button className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <span className="sr-only">View notifications</span>
-                <BellIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
-
               {/* Profile dropdown */}
               <Menu as="div" className="ml-3 relative">
                 {({ open }) => (
@@ -228,13 +206,13 @@ export default function Sidebar({ children }) {
                     <div>
                       <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                         <span className="sr-only">Open user menu</span>
-                        <img
-                          className="h-8 w-8 rounded-full"
-                          src={
-                            'https://avatars.githubusercontent.com/jeffhogg86'
-                          }
-                          alt="avatar"
-                        />
+                        {session && (
+                          <img
+                            className="h-8 w-8 rounded-full"
+                            src={session.user.image}
+                            alt="avatar"
+                          />
+                        )}
                       </Menu.Button>
                     </div>
                     <Transition
