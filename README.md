@@ -46,7 +46,7 @@ A Next.js and MongoDB built react web application. Featuring the YouTube API and
 ### Built With
 
 - [Next.js](https://nextjs.org/)
-- [Material-UI](https://material-ui.com/)
+- [tailwindcss](https://tailwindcss.com/)
 
 <!-- ROADMAP -->
 
