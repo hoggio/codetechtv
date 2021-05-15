@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-// import Link from './Link';
 
 const VideoRow = ({ data }: any) => {
   return (

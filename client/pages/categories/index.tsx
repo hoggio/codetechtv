@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import CategoriesList from '../../components/CategoriesList';
-import { Container } from '@material-ui/core';
 import { YOUTUBE_PLAYLISTS_API } from '../../constants/videoConstants';
 
 export async function getServerSideProps() {
@@ -27,9 +26,7 @@ export default function Categories({ data }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Container>
-          <CategoriesList data={data} />
-        </Container>
+        <CategoriesList data={data} />
       </main>
     </div>
   );

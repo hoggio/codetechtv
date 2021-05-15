@@ -1,5 +1,3 @@
-// import { connectToDatabase } from '../util/mongodb';
-// import { signIn, signOut, useSession } from 'next-auth/client';a
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import { YOUTUBE_ALL_VIDEOS_API } from '../constants/videoConstants';
@@ -20,7 +18,6 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ data }: any) {
-  // const [session, loading] = useSession();
   return (
     <div>
       <Head>
