@@ -1,14 +1,12 @@
 import { Fragment, useState } from 'react';
-import { useSession } from 'next-auth/client';
-import { Dialog, Menu, Transition } from '@headlessui/react';
+import { Dialog, Transition } from '@headlessui/react';
 import {
-  BellIcon,
   HomeIcon,
+  ShoppingBagIcon,
   MenuAlt2Icon,
   XIcon,
   DocumentSearchIcon,
   FilmIcon,
-  UserIcon,
   UserGroupIcon,
 } from '@heroicons/react/outline';
 import { SearchIcon } from '@heroicons/react/solid';
@@ -27,12 +25,13 @@ const navigation = [
     icon: DocumentSearchIcon,
     current: false,
   },
+  {
+    name: 'Shop',
+    href: '/shop',
+    icon: ShoppingBagIcon,
+    current: false,
+  },
   { name: 'About Us', href: '/about', icon: UserGroupIcon, current: false },
-  { name: 'Profile', href: '/profile', icon: UserIcon, current: false },
-];
-const userNavigation = [
-  { name: 'Your Profile', href: '/profile' },
-  { name: 'Sign out', href: '/api/auth/signout' },
 ];
 
 function classNames(...classes) {
@@ -41,7 +40,6 @@ function classNames(...classes) {
 
 export default function Sidebar({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [session, loading] = useSession();
 
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
@@ -197,58 +195,6 @@ export default function Sidebar({ children }) {
                   />
                 </div>
               </form>
-            </div>
-            <div className="ml-4 flex items-center md:ml-6">
-              {/* Profile dropdown */}
-              <Menu as="div" className="ml-3 relative">
-                {({ open }) => (
-                  <>
-                    <div>
-                      <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                        <span className="sr-only">Open user menu</span>
-                        {session && (
-                          <img
-                            className="h-8 w-8 rounded-full"
-                            src={session.user.image}
-                            alt="avatar"
-                          />
-                        )}
-                      </Menu.Button>
-                    </div>
-                    <Transition
-                      show={open}
-                      as={Fragment}
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
-                    >
-                      <Menu.Items
-                        static
-                        className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                      >
-                        {userNavigation.map(item => (
-                          <Menu.Item key={item.name}>
-                            {({ active }) => (
-                              <a
-                                href={item.href}
-                                className={classNames(
-                                  active ? 'bg-gray-100' : '',
-                                  'block px-4 py-2 text-sm text-gray-700'
-                                )}
-                              >
-                                {item.name}
-                              </a>
-                            )}
-                          </Menu.Item>
-                        ))}
-                      </Menu.Items>
-                    </Transition>
-                  </>
-                )}
-              </Menu>
             </div>
           </div>
         </div>
