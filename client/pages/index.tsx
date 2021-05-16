@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
+import Ads from '../components/Ads';
 import { YOUTUBE_ALL_VIDEOS_API } from '../constants/videoConstants';
 
 export async function getServerSideProps() {
@@ -27,6 +28,7 @@ export default function Home({ data }: any) {
 
       <main>
         <Hero />
+        <Ads />
       </main>
     </div>
   );
