@@ -26,7 +26,7 @@ export default function Example() {
               <li key={person.name}>
                 <div className="space-y-4 flex flex-col items-center">
                   <img
-                    className="object-cover rounded-full shadow-lg"
+                    className="object-cover h-48 rounded-full shadow-lg"
                     src={person.imageUrl}
                     alt=""
                   />
