@@ -21,8 +21,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "util/mongodb.js", "pages/api/auth/[...nextauth].js"],
+    "**/*.tsx"],
   "exclude": [
     "node_modules"
   ],
