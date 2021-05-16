@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const VideoRow = ({ data }: any) => {
+const MoreVideos = ({ data }: any) => {
   return (
     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 pt-6">
       <p>More videos:</p>
@@ -42,4 +42,4 @@ const VideoRow = ({ data }: any) => {
   );
 };
 
-export default VideoRow;
+export default MoreVideos;

@@ -1,7 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import {
-  HomeIcon,
   ShoppingBagIcon,
   MenuAlt2Icon,
   XIcon,
@@ -9,10 +8,10 @@ import {
   FilmIcon,
   UserGroupIcon,
 } from '@heroicons/react/outline';
-import { SearchIcon } from '@heroicons/react/solid';
+import Logo from './Logo';
+import AmazonBanner from '../components/AmazonBanner';
 
 const navigation = [
-  { name: 'Home', href: '/', icon: HomeIcon, current: false },
   {
     name: 'Player',
     href: '/player',
@@ -31,7 +30,8 @@ const navigation = [
     icon: ShoppingBagIcon,
     current: false,
   },
-  { name: 'About Us', href: '/about', icon: UserGroupIcon, current: false },
+
+  { name: 'About', href: '/about', icon: UserGroupIcon, current: false },
 ];
 
 function classNames(...classes) {
@@ -93,11 +93,7 @@ export default function Sidebar({ children }) {
                 </div>
               </Transition.Child>
               <div className="flex-shrink-0 flex items-center px-4">
-                <img
-                  className="h-10 w-auto"
-                  src={'/images/longlogo.png'}
-                  alt="Workflow"
-                />
+                <Logo />
               </div>
               <div className="mt-5 flex-1 h-0 overflow-y-auto">
                 <nav className="px-2 space-y-1">
@@ -132,14 +128,10 @@ export default function Sidebar({ children }) {
       {/* Static sidebar for desktop */}
       <div className="hidden bg-blue-700 md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64">
-          {/* Sidebar component, swap this element with another sidebar if you like */}
+          {/* Sidebar component*/}
           <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
             <div className="flex items-center flex-shrink-0 px-4">
-              <img
-                className="h-10 w-auto"
-                src={'/images/longlogo.png'}
-                alt="Workflow"
-              />
+              <Logo />
             </div>
             <div className="mt-5 flex-1 flex flex-col">
               <nav className="flex-1 px-2 space-y-1">
@@ -176,35 +168,14 @@ export default function Sidebar({ children }) {
             <span className="sr-only">Open sidebar</span>
             <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
           </button>
-          <div className="flex-1 px-4 flex justify-between">
-            <div className="flex-1 flex">
-              <form className="w-full flex md:ml-0" action="#" method="GET">
-                <label htmlFor="search_field" className="sr-only">
-                  Search
-                </label>
-                <div className="relative w-full text-gray-400 focus-within:text-gray-600">
-                  <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                    <SearchIcon className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <input
-                    id="search_field"
-                    className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
-                    placeholder="Search"
-                    type="search"
-                    name="search"
-                  />
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
 
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
           <div className="py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-              {/* Replace with your content */}
+              {/* content */}
+              <AmazonBanner />
               {children}
-              {/* /End replace */}
             </div>
           </div>
         </main>
