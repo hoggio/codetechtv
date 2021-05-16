@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import YoutubeList from '../components/YoutubeList';
+import AmazonBanner from '../components/AmazonBanner';
 
 const Shop = () => {
   return (
@@ -22,6 +23,7 @@ const Shop = () => {
         </div>
       </div>
       <YoutubeList />
+      <AmazonBanner />
     </div>
   );
 };
