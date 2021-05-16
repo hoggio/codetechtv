@@ -17,10 +17,10 @@ export default function VideoPlayer() {
           url={vidUrl}
         />
       </div>
-      <div className=" hidden lg:flex justify-center max-w-7xl mx-auto sm:px-6 lg:px-8 pt-6">
+      <div className="w-auto h-auto hidden lg:flex justify-center mx-auto sm:px-6 lg:px-8 pt-6">
         <ReactPlayer
-          width="640px"
-          height="360px"
+          // width="960px"
+          // height="540px"
           controls={true}
           url={vidUrl}
         />

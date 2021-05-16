@@ -20,8 +20,8 @@ const navigation = [
     current: false,
   },
   {
-    name: 'Categories',
-    href: '/categories',
+    name: 'Videos',
+    href: '/videos',
     icon: DocumentSearchIcon,
     current: false,
   },

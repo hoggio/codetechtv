@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const CategoriesList = ({ data }: any) => {
+const VideosList = ({ data }: any) => {
   return (
     <div className="flex space-x-6">
       {data.items.map(item => {
@@ -14,7 +14,7 @@ const CategoriesList = ({ data }: any) => {
             <h1 className="text-md md:text-2xl lg:text-4xl mb-6">{title}</h1>
             <Link
               href={{
-                pathname: '/categories/[id]',
+                pathname: '/videos/[id]',
                 query: { id: `${id}` },
               }}
             >
@@ -33,4 +33,4 @@ const CategoriesList = ({ data }: any) => {
   );
 };
 
-export default CategoriesList;
+export default VideosList;

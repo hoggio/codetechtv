@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import CategoriesList from '../../components/CategoriesList';
+import VideosList from '../../components/VideosList';
 import { YOUTUBE_PLAYLISTS_API } from '../../constants/videoConstants';
 
 export async function getServerSideProps() {
@@ -18,7 +18,7 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Categories({ data }: any) {
+export default function Videos({ data }: any) {
   return (
     <div>
       <Head>
@@ -26,7 +26,7 @@ export default function Categories({ data }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <CategoriesList data={data} />
+        <VideosList data={data} />
       </main>
     </div>
   );

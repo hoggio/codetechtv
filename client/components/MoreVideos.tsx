@@ -4,7 +4,7 @@ import Link from 'next/link';
 const VideoRow = ({ data }: any) => {
   return (
     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 pt-6">
-      <p>Latest videos:</p>
+      <p>More videos:</p>
       <ul
         role="list"
         className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 pt-2"
@@ -18,7 +18,7 @@ const VideoRow = ({ data }: any) => {
 
             return (
               <li key={id} className="relative">
-                <div className="cursor-pointer focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg overflow-hidden">
+                <div className="cursor-pointer focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500   w-full overflow-hidden">
                   <Link
                     key={id}
                     href={{

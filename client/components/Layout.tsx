@@ -16,7 +16,7 @@ const Layout = ({ children, title = 'CodeTech TV' }: Props) => (
       <meta property="og:title" content={title} />
       <meta
         property="og:description"
-        content="Learn how to code at CodeTech TV with coding videos and tutorials."
+        content="Learn how to code at CodeTech TV with coding videos and tutorials. Check out the best tech gear to get started recording YouTube videos."
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://codetechtv.com/" />
