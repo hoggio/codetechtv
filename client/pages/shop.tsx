@@ -1,9 +1,14 @@
+import Head from 'next/head';
 import React from 'react';
 import YoutubeList from '../components/YoutubeList';
 
-const shop = () => {
+const Shop = () => {
   return (
     <div>
+      <Head>
+        <title>Shop</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="bg-white mb-4">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -21,4 +26,4 @@ const shop = () => {
   );
 };
 
-export default shop;
+export default Shop;
