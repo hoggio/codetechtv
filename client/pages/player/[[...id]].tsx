@@ -1,9 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import VideoPlayer from '../../components/VideoPlayer';
-import LatestVideos from '../../components/MoreVideos';
-import AmazonBanner from '../../components/AmazonBanner';
-import Link from 'next/link';
+import MoreVideos from '../../components/MoreVideos';
 import { YOUTUBE_ALL_VIDEOS_API } from '../../constants/videoConstants';
 
 export async function getServerSideProps() {
@@ -30,8 +28,7 @@ const Video = ({ data }: any) => {
       </Head>
       <main>
         <VideoPlayer />
-        <AmazonBanner />
-        <LatestVideos data={data} />
+        <MoreVideos data={data} />
       </main>
     </div>
   );

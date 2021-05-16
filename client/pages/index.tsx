@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
-import AmazonBanner from '../components/AmazonBanner';
 import { YOUTUBE_ALL_VIDEOS_API } from '../constants/videoConstants';
 
 export async function getServerSideProps() {
@@ -28,7 +27,6 @@ export default function Home({ data }: any) {
 
       <main>
         <Hero />
-        <AmazonBanner />
       </main>
     </div>
   );
