@@ -14,7 +14,6 @@ const VideoList = ({ data }: any) => {
 
           return (
             <div key={id} className="mt-6">
-              <h2 className="text-md md:text-lg mb-6">{title}</h2>
               <Link
                 href={{
                   pathname: '/player/[id]',
