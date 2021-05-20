@@ -24,6 +24,11 @@ const Layout = ({ children, title = 'CodeTech TV' }: Props) => (
         property="og:image"
         content="https://codetechtv.com/images/codetechtv.png"
       />
+      <script
+        data-ad-client="ca-pub-6338076895094129"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></script>
     </Head>
     <Sidebar children={children} />
   </div>
