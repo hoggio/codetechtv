@@ -9,7 +9,6 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/outline';
 import Logo from './Logo';
-import AmazonBanner from '../components/AmazonBanner';
 
 const navigation = [
   {
@@ -174,7 +173,6 @@ export default function Sidebar({ children }) {
           <div className="py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               {/* content */}
-              <AmazonBanner />
               {children}
             </div>
           </div>
